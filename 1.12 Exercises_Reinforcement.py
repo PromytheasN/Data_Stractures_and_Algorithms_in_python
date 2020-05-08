@@ -70,3 +70,20 @@ R-1.8 Python allows negative integers to be used as indices into a sequence, suc
 If string s has length n, and expression s[k] is used for index−n≤k<0, what is the equivalent 
 index j≥0such thats[j]references the same element? 
 """
+
+equiv_index = lambda string, neg_k: len(string) + neg_k
+
+# R-1.9 What parameters should be sent to the range constructor, to produce a range with values 50, 60, 70, 80? 
+#in order to see this as a list:
+
+list(range(50,81,10))
+
+"""
+R-1.10 What parameters should be sent to the range constructor, to produce a range with values 8, 6, 4, 2, 0,−2,−4,−6,−8?
+"""
+list(range(8,-9,-2))
+
+"""
+R-1.11 Demonstrate how to use Python’s list comprehension syntax to produce the list [1, 2, 4, 8, 16, 32, 64, 128, 256]. 
+"""
+
