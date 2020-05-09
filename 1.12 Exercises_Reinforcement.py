@@ -87,9 +87,11 @@ list(range(8,-9,-2))
 R-1.11 Demonstrate how to use Python’s list comprehension syntax to produce the list [1, 2, 4, 8, 16, 32, 64, 128, 256]. 
 """
 
+#this is the solution asked
 
+[2**i for i in range(9))]
 
-#multiple solutions
+#other solutions
 s = [1]
 x = 1
 for i in range(8):
