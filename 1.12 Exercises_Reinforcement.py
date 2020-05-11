@@ -105,3 +105,22 @@ while x < 129:
     x += x
     lst.append(x)
 print(lst)
+
+"""
+R-1.12 Python’s random module includes a function choice(data) that returns a random element from a non-empty sequence.
+The random module includes a more basic function randrange, with parameterization similar to the built-in range function, 
+that return a random choice from the given range. Using only the randrange function, implement your own version of 
+the choice function
+"""
+
+def randomchoice(data):
+    return random.choice(data)
+
+#you can test this with any given list, e.g: 
+
+yolo = [1,3,5,"a", 8, "32"]
+
+#then run it:
+# randomchoice(yolo)
+
+#enjoy!!! 
