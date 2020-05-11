@@ -6,7 +6,7 @@ that is,n = mi for some integer i, andFalse otherwise
 """
 
 def is_multiple(n,m):
-    return True if n%m == 0 else False
+    return True if n%m == 0
     
     
 """
