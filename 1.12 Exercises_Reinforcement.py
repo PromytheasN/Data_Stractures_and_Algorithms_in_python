@@ -112,8 +112,16 @@ The random module includes a more basic function randrange, with parameterizatio
 that return a random choice from the given range. Using only the randrange function, implement your own version of 
 the choice function
 """
+#normaly we would have to import random at the begin of the code, in this case though I act as it's problem-solution is seperate
+#also normally we would have to put this """ explenation """ bellow the definition of its' function. 
 
+import random
 def randomchoice(data):
+    
+    """
+    we use this space to explain the function
+    """
+
     return random.choice(data)
 
 #you can test this with any given list, e.g: 
