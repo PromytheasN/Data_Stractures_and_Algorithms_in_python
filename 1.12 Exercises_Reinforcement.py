@@ -33,6 +33,48 @@ def minmax(*args):
     inp_list = inp_list[0], inp_list[len(inp_list)-1]
     return inp_list
 
+#An other solution
+from IPython.display import clear_output
+
+def minmax2():
+    """
+    This is na uprgaded function/problem solution including input of the list from the user,
+    that checks if all values inputed are integars and returns min and max from the values
+    inputed without using min, max or sort.
+    """
+    
+    #We start a loop that requires only integars to be inputed in order to return results
+    while True:
+        
+        #we check if all values are integars
+        try:
+            the_list = list(map(int, input("Please provide your list of numbers: ").split()))
+            
+        #In case there is a ValueError we ask from the user to re-insert values
+        except ValueError:
+            #We clear previus error text in case we have repeated non-integar inputs from user
+            clear_output()
+            print("Buddy, numbers only eh! ;-)")
+            
+
+            
+            #we go back to the begining of the loop
+            continue
+        
+        #If input is integars only we start the calculations in order to find min/max of the given values
+        else:
+            #we asign the first number of the list to both min and max
+            mx, mn = the_list[0], the_list[0]
+            for x in the_list:
+                
+                #We check if x is larger than max or smaller than min
+                if x > mx:
+                    mx = x
+                elif x < mn:
+                    mn = x
+        #We return min and max
+        return (mn, mx)
+
 
 
 """
