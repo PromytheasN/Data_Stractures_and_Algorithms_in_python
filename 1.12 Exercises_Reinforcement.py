@@ -56,13 +56,12 @@ def minmax2():
             clear_output()
             print("Buddy, numbers only eh! ;-)")
             
-
-            
             #we go back to the begining of the loop
             continue
         
         #If input is integars only we start the calculations in order to find min/max of the given values
         else:
+            
             #we asign the first number of the list to both min and max
             mx, mn = the_list[0], the_list[0]
             for x in the_list:
@@ -72,6 +71,7 @@ def minmax2():
                     mx = x
                 elif x < mn:
                     mn = x
+                    
         #We return min and max
         return (mn, mx)
 
