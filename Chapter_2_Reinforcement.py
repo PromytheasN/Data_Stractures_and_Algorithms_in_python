@@ -118,3 +118,26 @@ class CreditCard:
         
         else:
             return "Thank you for your payment!"
+        
+        
+"""
+R-2.6 If the parameter to the make payment method of the CreditCard class
+were a negative number, that would have the effect of raising the balance
+on the account. Revise the implementation so that it raises a ValueError if
+a negative value is sent.
+"""
+
+def make_payment(self, amount):
+        """Checks if input is valid and process customer payment that reduces balance"""
+        try:
+            #Add on, checks if payable amount is positive
+            if amount >= 0:
+                self._balance -= amount
+            #If no possitive, returns VallueError
+            else:
+                return "ValueError"
+        except:
+            return "Looks like that you haven't input a numeric amount"
+        
+        else:
+            return "Thank you for your payment!"
