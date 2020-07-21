@@ -27,18 +27,30 @@ of each type
 """
 class Flower:
     
-    def __init__(self, name, petal_num, price):
+    def __init__(self):
         
         #Defining variables
-        self.name = name
-        self.petal_num = petal_num
-        self.price = price
+        self.name = ""
+        self.petal_num = 0
+        self.price = 0.0
         
+    def get_name(self):
+        return self.name
+        
+    def get_petal_num(self):
+        return self.petal_num
     
-    def __str__(self):
+    def get_price(self):
+        return self.price
+    
+    def set_name(self, name):
+        self.name = name
         
-        #Retrieving values.
-        return f"{self.name} flower has {self.petal_num} petals and cost ${self.price}"
+    def set_petal_num(self, petal_num):
+        self.petal_num = petal_num
+        
+    def set_price(self, price):
+        self.price = price
     
         
       
