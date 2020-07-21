@@ -25,3 +25,25 @@ that initializes each variable to an appropriate value, and your class should
 include methods for setting the value of each type, and retrieving the value
 of each type
 """
+class Flower:
+    
+    def __init__(self, name, petal_num, price):
+        
+        #Defining variables
+        self.name = name
+        self.petal_num = petal_num
+        self.price = price
+        
+    
+    def __str__(self):
+        
+        #Retrieving values.
+        return f"{self.name} flower has {self.petal_num} petals and cost ${self.price}"
+    
+        
+      
+"""
+R-2.5 Use the techniques of Section 1.7 to revise the charge and make_payment
+methods of the CreditCard class to ensure that the caller sends a number
+as a parameter
+"""
