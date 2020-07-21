@@ -128,16 +128,43 @@ a negative value is sent.
 """
 
 def make_payment(self, amount):
-        """Checks if input is valid and process customer payment that reduces balance"""
-        try:
-            #Add on, checks if payable amount is positive
-            if amount >= 0:
-                self._balance -= amount
-            #If no possitive, returns VallueError
-            else:
-                return "ValueError"
-        except:
-            return "Looks like that you haven't input a numeric amount"
-        
+    """Checks if input is valid and process customer payment that reduces balance"""
+    try:
+        #Add on, checks if payable amount is positive
+        if amount >= 0:
+            self._balance -= amount
+        #If no possitive, returns VallueError
         else:
-            return "Thank you for your payment!"
+            return "ValueError"
+    except:
+        return "Looks like that you haven't input a numeric amount"
+
+    else:
+        return "Thank you for your payment!"
+
+    
+"""R-2.7 The CreditCard class of Section 2.3 initializes the balance of a new account to zero. 
+Modify that class so that a new account can be given a
+nonzero balance using an optional fifth parameter to the constructor. The
+four-parameter constructor syntax should continue to produce an account
+with zero balance."""
+
+class CreditCard:
+    """A consumer credit card."""
+    
+    #We added balance = 0 as an optional input, if there is none then balance = 0
+    def __init__(self, customer, bank, acnt, limit, balance = 0):
+        """Create a new credit card instance.
+        the initial balance is zero
+        customer the name of the customer (e.g., John Bowman )
+        bank the name of the bank (e.g., California Savings )
+        acnt the acount identifier (e.g., 5391 0375 9387 5309 )
+        limit credit limit (measured in dollars)"""
+        
+        
+        self._customer = customer
+        self._bank = bank
+        self._account = acnt
+        self._limit = limit
+        #We shifted self._balance = balance incase there is an input
+        self._balance = balance    
