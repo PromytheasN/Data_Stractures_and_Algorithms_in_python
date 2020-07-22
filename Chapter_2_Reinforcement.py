@@ -257,3 +257,14 @@ class Vector:
     def __str__(self):
         """Produce string representation of vector"""
         return "<" + str(self._coords)[1:-1] + ">" # adapt list representation        
+
+"""R-2.10 Implement the neg method for the Vector class of Section 2.3.3, so
+that the expression −v returns a new vector instance whose coordinates
+are all the negated values of the respective coordinates of v."""
+
+    #This should be added in class Vector:
+    def __neg__(self):
+       """Return new Vector instance whose coordinates are all negated values of the original ones"""
+        return [-i for i in self]
+    
+   
