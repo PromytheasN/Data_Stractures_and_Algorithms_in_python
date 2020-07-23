@@ -266,7 +266,10 @@ are all the negated values of the respective coordinates of v."""
     #This should be added in class Vector:
     def __neg__(self):
        """Return new Vector instance whose coordinates are all negated values of the original ones"""
-        return [-i for i in self]
+        result = Vector(len(self)) + self
+        for i in range(len(self)):
+            result[i] *= -1
+        return result
     
    
 """
@@ -277,10 +280,10 @@ Explain how the Vector class definition can be revised so that this syntax
 generates a new vector.
 """
 
-#We add this function to our Vector class
-def __radd__(self, other):
-    """Returns Vectors sum with other coordinates of object with same dimentions"""
-    return self.__add__(other)
+    #We add this function to our Vector class
+    def __radd__(self, other):
+        """Returns Vectors sum with other coordinates of object with same dimentions"""
+        return self.__add__(other)
 
 
 """R-2.12 Implement the __mul__ method for the Vector class of Section 2.3.3, so
@@ -288,6 +291,19 @@ that the expression v*3 returns a new vector with coordinates that are 3
 times the respective coordinates of v."""
 
 
-def __mul__(self, other):
-        """Return new Vector instance whose coordinates are times 3 of the original"""
-        return [i*3 for i in self]
+    def __mul__(self, other):
+        """Return new Vector instance whose coordinates are x(other) times of the original"""
+        result = Vector(len(self)) + self
+        for i in range(len(self)):
+            result[i] *= other
+        return result
+    
+    
+  """R-2.13 Exercise R-2.12 asks for an implementation of mul , for the Vector
+class of Section 2.3.3, to provide support for the syntax v*3. Implement
+the rmul method, to provide additional support for syntax 3*v."""
+
+    def __rmul__(self, other):
+        """Return new vector instance whose coordinates are x times of the original with the first factor being an x value and second the Vector"""
+        return self.__mul__(other)
+
