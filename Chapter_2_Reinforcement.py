@@ -279,5 +279,15 @@ generates a new vector.
 
 #We add this function to our Vector class
 def __radd__(self, other):
+    """Returns Vectors sum with other coordinates of object with same dimentions"""
     return self.__add__(other)
 
+
+"""R-2.12 Implement the __mul__ method for the Vector class of Section 2.3.3, so
+that the expression v*3 returns a new vector with coordinates that are 3
+times the respective coordinates of v."""
+
+
+def __mul__(self, other):
+        """Return new Vector instance whose coordinates are times 3 of the original"""
+        return [i*3 for i in self]
