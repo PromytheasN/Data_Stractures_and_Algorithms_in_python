@@ -307,3 +307,14 @@ the rmul method, to provide additional support for syntax 3*v."""
         """Return new vector instance whose coordinates are x times of the original with the first factor being an x value and second the Vector"""
         return self.__mul__(other)
 
+"""R-2.14 Implement the __mul__ method for the Vector class of Section 2.3.3, so
+that the expression u*v returns a scalar that represents the dot product of
+the vectors, that is, ∑d
+i=1 ui · vi."""
+
+    def __mul__(self, other):
+        """Return a scalar that represents the dot product of 2 vectors"""
+        result = Vector(len(self)) + self
+        for i in range(len(self)):
+            result[i] = result[i] * other[i]
+        return result
