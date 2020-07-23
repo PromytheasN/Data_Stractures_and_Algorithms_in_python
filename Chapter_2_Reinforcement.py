@@ -34,6 +34,7 @@ class Flower:
         self.petal_num = 0
         self.price = 0.0
         
+        
     def get_name(self):
         return self.name
         
@@ -268,3 +269,15 @@ are all the negated values of the respective coordinates of v."""
         return [-i for i in self]
     
    
+"""
+R-2.11 In Section 2.3.3, we note that our Vector class supports a syntax such as
+v = u + [5, 3, 10, −2, 1], in which the sum of a vector and list returns
+a new vector. However, the syntax v = [5, 3, 10, −2, 1] + u is illegal.
+Explain how the Vector class definition can be revised so that this syntax
+generates a new vector.
+"""
+
+#We add this function to our Vector class
+def __radd__(self, other):
+    return self.__add__(other)
+
