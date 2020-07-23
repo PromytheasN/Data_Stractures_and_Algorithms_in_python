@@ -338,3 +338,16 @@ dimension with all zeros, but if a sequence of numbers is provided, it produces 
         except:
             if list(d):
                 self._coords = d
+                
+                
+"""R-2.16 Our Range class, from Section 2.3.5, relies on the formula
+max(0, (stop − start + step − 1) // step)
+to compute the number of elements in the range. It is not immediately evident why this formula provides the correct calculation, even if assuming
+a positive step size. Justify this formula, in your own words."""
+
+"""From this equation we have the last number minus the first one to find the total difference. Then we also add the step in order to include the
+first number of our len(range(x,y)) but we do -1 as well in order to make sure that we are not including the last number y, in our len. after we find
+the difference we divide it by the stp in order to find the total amount of steps within this range(x,y,s)""" 
+
+
+
