@@ -448,7 +448,7 @@ while ArithmeticProgression(128, y).__next__() <= 2**63:
     y += 128
     
 #The solution would be  easier using math
-2**7 * 2**56 == 2**63 #which is True
+2**7 * 2**56 == 2**63 #which is True, there for we need 2**56 calls in order to get 2**63 (or larger)
 
 
 
