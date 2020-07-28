@@ -320,6 +320,26 @@ i=1 ui · vi."""
         return result
 
     
+"""When using the ArithmeticProgression class of Section 2.4.2 with an increment of 128 and a start of 0, how many calls to next can we make
+before we reach an integer of 2**63 or larger?"""
+class ArithmeticProgression(Progression):
+    """Iterator producing an arithmetic progression"""
+    
+    def __init__(self, increment = 1, start = 0):
+        """Create a new arithmetic progression.
+        increment the fixed constant to add to each term (default 1)
+        start the first term of progression(default 0)"""
+        
+        Progression.__init__(self, start)
+        self._increment = increment
+        
+    def _advance(self):
+        """Update current value by adding the fixed increment."""
+        self._current += self._increment
+        
+        
+
+    
  """R-2.15 The Vector class of Section 2.3.3 provides a constructor that takes an integer d, and produces a d-dimensional vector with all coordinates equal to
 0. Another convenient form for creating a new vector would be to send the
 constructor a parameter that is some iterable type representing a sequence
@@ -414,3 +434,21 @@ class FibonacciProgression(Progression):
 FibonacciProgression(2,2).print_progression(8)
 
         
+"""R-2.19 When using the ArithmeticProgression class with an increment of 128 and a start of 0,
+how many calls to next can we make
+before we reach an integer of 2**63 or larger?"""
+
+#We could potentially solve this with a loop, due to the large number though it won't work within reasonable time.
+y = 0 #Start
+n = 0 #Counting loops
+
+#Loop repeating until ArithmeticProgression > 2**63
+while ArithmeticProgression(128, y).__next__() <= 2**63:
+    n += 1
+    y += 128
+    
+#The solution would be  easier using math
+2**7 * 2**56 == 2**63 #which is True
+
+
+
