@@ -293,10 +293,21 @@ times the respective coordinates of v."""
 
     def __mul__(self, other):
         """Return new Vector instance whose coordinates are x(other) times of the original"""
-        result = Vector(len(self)) + self
-        for i in range(len(self)):
-            result[i] *= other
-        return result
+        if type(other) == int or type(other) == float:
+            result = Vector(len(self))
+            for i in range(len(self)):
+                result[i] = self[i]*other
+            return result
+        
+        else:
+            len(other)
+            print(len(other), len(self))
+            if len(other) != len(self):
+                raise ValueError("Vector's dimentions do not match")
+            sum = 0
+            for i in range(len(self)):
+                sum += self[i]*other[i]
+            return sum
     
     
   """R-2.13 Exercise R-2.12 asks for an implementation of mul , for the Vector
